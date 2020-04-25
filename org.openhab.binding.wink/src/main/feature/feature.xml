@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="org.openhab.binding.wink-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+    <repository>mvn:org.openhab.core.features.karaf/org.openhab.core.features.karaf.openhab-core/${ohc.version}/xml/features</repository>
+
+    <feature name="openhab-binding-wink" description="Wink Binding" version="${project.version}">
+        <feature>openhab-runtime-base</feature>
+		<bundle dependency="true">mvn:com.google.code.gson/gson/2.8.6</bundle>
+		<bundle dependency="true">mvn:javax.ws.rs/javax.ws.rs-api/2.1.1</bundle>
+		<bundle dependency="true">mvn:org.glassfish.jersey.core/jersey-client/2.30.1</bundle>
+        <bundle start-level="80">mvn:org.openhab.addons.bundles/org.openhab.binding.wink/${project.version}</bundle>
+    </feature>
+</features>
